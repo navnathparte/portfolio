@@ -29,6 +29,12 @@ const Contact = () => {
     alert(res.message);
   };
 
+  const handleSendEmail = () => {
+    const email = "9nath.parte@gmail.com";
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}`;
+    window.open(gmailUrl, "_blank");
+  };
+
   return (
     <div id="contact" className="contact">
       <div className="title-box">
@@ -45,7 +51,10 @@ const Contact = () => {
           </p>
           <div className="contact-details">
             <div className="contact-detail">
-              <img src={mail_icon} alt="" /> <p>9nath.parte@gmail.com</p>
+              <img src={mail_icon} alt="" />
+              <button onClick={handleSendEmail} className="email-button">
+                9nath.parte@gmail.com
+              </button>
             </div>
             <div className="contact-detail">
               <img src={call_icon} alt="" /> <p>+91 9833535250 / 9322310197</p>
