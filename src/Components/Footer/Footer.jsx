@@ -4,6 +4,9 @@ import footer_logo from "../../assets/footer_logo.png";
 import user_icon from "../../assets/user_icon.svg";
 
 const Footer = () => {
+  const onSubmit = async (event) => {
+    alert("The subscribe feature is currently in maintenance mode.");
+  };
   return (
     <div className="footer">
       <div className="footer-top">
@@ -19,7 +22,9 @@ const Footer = () => {
             <img src={user_icon} alt="" />
             <input type="email" placeholder="Enter your email" />
           </div>
-          <div className="footer-subscribe">Subscribe</div>
+          <div className="footer-subscribe" onClick={onSubmit}>
+            Subscribe
+          </div>
         </div>
       </div>
       <hr />
