@@ -24,9 +24,14 @@ const Contact = () => {
         Accept: "application/json",
       },
       body: json,
-    }).then((res) => res.json());
-
-    alert(res.message);
+    })
+      .then((res) => res.json())
+      .catch((err) => {
+        alert(
+          "The contact form feature is currently in maintenance mode. Please try again later."
+        );
+        return;
+      });
   };
 
   const handleSendEmail = () => {
@@ -41,6 +46,7 @@ const Contact = () => {
         <h1>Get in touch</h1>
         <img src={theme_pattern} alt="" />
       </div>
+
       <div className="contact-section">
         <div className="contact-left">
           <h1>Let's talk</h1>
@@ -64,6 +70,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
+
         <form onSubmit={onSubmit} className="contact-right">
           <label htmlFor="">Your Name</label>
           <input type="text" placeholder="Enter your name" name="name" />
