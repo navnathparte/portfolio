@@ -10,28 +10,17 @@ const Contact = () => {
     event.preventDefault();
     const formData = new FormData(event.target);
 
-    // enter your own web3 forms access key below
-
-    formData.append("access_key", "xxxxxxxxxxxxxxxxxxxxxxxx");
-
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
 
-    const res = await fetch("https://api.web3forms.com/submit", {
+    const res = await fetch("http://localhost:3001/api/submit-contact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
       body: json,
-    })
-      .then((res) => res.json())
-      .catch((err) => {
-        alert(
-          "The contact form feature is currently in maintenance mode. Please try again later."
-        );
-        return;
-      });
+    });
   };
 
   const handleSendEmail = () => {
