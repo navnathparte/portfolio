@@ -28,7 +28,7 @@ const Footer = () => {
     if (email) {
       try {
         const res = await fetch(
-          `http://localhost:3001/api/check-subscription`,
+          `https://ticket-booking-dgva.onrender.com/api/check-subscription`,
           {
             method: "POST",
             headers: {
@@ -52,13 +52,16 @@ const Footer = () => {
 
   const handleSubscribeClick = async () => {
     try {
-      const res = await fetch("http://localhost:3001/api/subscribe", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email }),
-      });
+      const res = await fetch(
+        "https://ticket-booking-dgva.onrender.com/api/subscribe",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email }),
+        }
+      );
 
       if (res.ok) {
         alert("Subscribed successfully!");

@@ -13,14 +13,17 @@ const Contact = () => {
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
 
-    const res = await fetch("http://localhost:3001/api/submit-contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: json,
-    });
+    const res = await fetch(
+      "https://ticket-booking-dgva.onrender.com/api/submit-contact",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: json,
+      }
+    );
   };
 
   const handleSendEmail = () => {
